@@ -121,3 +121,8 @@ a {
   border-radius: 90%;
   margin-bottom: -3rem;
 }
+.wrapper {
+  display: grid;
+  grid-template-columns: repeat(15, 1fr);
+  gap: 10px;
+}

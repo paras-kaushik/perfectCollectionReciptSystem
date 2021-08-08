@@ -1,3 +1,20 @@
+const shopItems = {
+  1: "Kurta Pajama",
+  2: "Nighty",
+  3: "Lower",
+  4: "Shorts",
+  5: "T. Shirt",
+  6: "Capri",
+  7: "Under Garments",
+  8: "Night Suit",
+  9: "Towel",
+  10: "Hankey",
+  11: "Socks",
+  12: "Dhoti",
+  13: "Kurta",
+  14: "Thermal",
+  15: "Track Suit",
+};
 window.onload = function () {
   var currentdate = new Date();
   var datetime =
@@ -14,6 +31,26 @@ window.onload = function () {
     currentdate.getSeconds();
 
   document.getElementById("page-date").innerText = datetime;
+
+  var inputPair = document.querySelectorAll(".input-pair");
+  inputPair[0].addEventListener("keypress", (event) => {
+    if (event.key === "Enter") {
+      inputPair[1].focus();
+    }
+  });
+  inputPair[1].addEventListener("keypress", (event) => {
+    if (event.key === "Enter") {
+      inputPair[0].focus();
+    }
+  });
+
+  for (let key in shopItems) {
+    if (shopItems.hasOwnProperty(key)) {
+      // console.log(key, shopItems[key]);
+      var element = `<div>${key + " :" + shopItems[key]}</div>`;
+      document.getElementById("map-list").innerHTML += element;
+    }
+  }
 
   document.getElementById("download").addEventListener("click", () => {
     var deleteButtons = document.getElementsByClassName("item-delete");
@@ -36,24 +73,6 @@ window.onload = function () {
       window.location.reload();
     }, 5000);
   });
-};
-
-const shopItems = {
-  1: "Kurta Pajama",
-  2: "Nighty",
-  3: "Lower",
-  4: "Shorts",
-  5: "T. Shirt",
-  6: "Capri",
-  7: "Under Garments",
-  8: "Night Suit",
-  9: "Towel",
-  10: "Hankey",
-  11: "Socks",
-  12: "Dhoti",
-  13: "Kurta",
-  14: "Thermal",
-  15: "Track Suit",
 };
 
 function increaseTotalItemsCount() {
@@ -89,9 +108,10 @@ function additemNumberToListOnEnter(event) {
 function additemNumberToList() {
   var newItemNumber = document.getElementById("new-item-number").value;
   var newItemPrice = document.getElementById("new-item-price-input").value;
-  var newItemQuantity = document.getElementById(
-    "new-item-quantity-input"
-  ).value;
+  // var newItemQuantity = document.getElementById(
+  //   "new-item-quantity-input"
+  // ).value;
+  var newItemQuantity = 1;
   if (
     !(
       newItemNumber &&
@@ -106,7 +126,7 @@ function additemNumberToList() {
 
   document.getElementById("new-item-number").value = "";
   document.getElementById("new-item-price-input").value = "";
-  document.getElementById("new-item-quantity-input").value = "";
+  //document.getElementById("new-item-quantity-input").value = "";
 
   var newRowTotal = newItemPrice * newItemQuantity;
 
@@ -119,7 +139,7 @@ function additemNumberToList() {
   var listItem = `<tr id=${unqiueId} class="item-row">
    <td> <h6 class="mb-0 item-name">${itemName}</h6> </td> 
    <td> <span class="item-price">${newItemPrice}</span> </td> 
-   <td> <span class="item-quantity">${newItemQuantity}</span> </td> 
+   <td> <span class="item-quantity">1</span> </td> 
    <td> 
    <span class="font-weight-semibold item-total">${newRowTotal}</span>
     <button class="item-delete btn btn-danger" class="item-delete" style="margin-left: 1rem" onclick="handleDelete(event)" > X </button> 
@@ -159,3 +179,10 @@ function handleDelete(event) {
 
 //   updatePageTotals();
 // }
+var toggle = 0;
+function movetoinputpairs(event) {
+  if (event.key == "Enter") {
+    var pairs = document.querySelectorAll(".input-pair");
+    pairs[0].focus();
+  }
+}

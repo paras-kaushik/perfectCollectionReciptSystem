@@ -45,6 +45,20 @@
                       </li>
                       <li>Ghaziabad, Uttar Pradesh 201309</li>
                       <li>9899258797</li>
+                      <li>
+                        <span style="margin-right: 0.5rem"
+                          >Customer Number:</span
+                        >
+                        <input
+                          type="string"
+                          id="customer-number"
+                          name="customer-number"
+                          placeholder="Enter Customer Number"
+                          required
+                          autofocus
+                          onkeyup="movetoinputpairs(event)"
+                        />
+                      </li>
                     </ul>
                   </div>
                 </div>
@@ -151,6 +165,7 @@
             <input
               type="number"
               id="new-item-number"
+              class="input-pair"
               name="itemNumber"
               placeholder="Enter Item Number"
               required
@@ -160,13 +175,14 @@
             <input
               type="number"
               id="new-item-price-input"
+              class="input-pair"
               name="new-item-price-input"
               placeholder="Enter Item Price"
               required
               style="height: 2.3rem; margin: 1rem"
               onkeyup="additemNumberToListOnEnter(event)"
             />
-            <input
+            <!-- <input
               type="number"
               id="new-item-quantity-input"
               name="new-item-quantity-input"
@@ -174,7 +190,7 @@
               required
               style="height: 2.3rem; margin: 1rem"
               onkeyup="additemNumberToListOnEnter(event)"
-            />
+            /> -->
             <button
               type="submit"
               class="btn btn-primary"
@@ -185,6 +201,12 @@
           </div>
           <div>
             <button class="btn btn-success" id="download">GET TOTAL</button>
+          </div>
+        </div>
+        <div>
+          <div><h6>Item Number Meaning</h6></div>
+          <div id="map-list" class="wrapper">
+            
           </div>
         </div>
       </div>
