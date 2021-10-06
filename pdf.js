@@ -77,6 +77,19 @@ window.onload = function () {
     //   window.location.reload();
     // }, 5000);
   });
+
+  document.addEventListener(
+    "keyup",
+    (event) => {
+      var name = event.key;
+      var code = event.code;
+      // Alert the key name and key code on keydown
+      if (name == "Shift")
+        //alert(`Key pressed ${name} \r\n Key code value: ${code}`);
+        document.getElementById("download").click();
+    },
+    false
+  );
 };
 
 function increaseTotalItemsCount() {
