@@ -141,7 +141,7 @@ function additemNumberToList() {
   if (typeof itemName === "undefined") return;
 
   var listItem = `<tr id=${unqiueId} class="item-row">
-   <td> <h6 class="mb-0 item-name">${itemName}</h6> </td> 
+   <td> <span class="item-name">${itemName}</span> </td> 
    <td> <span class="item-price">${newItemPrice}</span> </td> 
    <td> <span class="item-quantity">1</span> </td> 
    <td> 
