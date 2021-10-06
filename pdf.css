@@ -125,6 +125,8 @@ body {
   color: #333;
   text-align: left;
   background-color: #eee;
+  background-color: red;
+  height: min-content;
 }
 .btn-xl {
   padding: 1rem;
