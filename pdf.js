@@ -1,5 +1,5 @@
 const shopItems = {
-  1: "Kurta Pajama",
+  1: "Kurta",
   2: "Nighty",
   3: "Lower",
   4: "Shorts",

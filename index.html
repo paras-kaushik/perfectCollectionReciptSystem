@@ -26,15 +26,7 @@
     <div style="display: flex; flex-direction: row">
       <div
         id="input-and-mapping-containing-div"
-        class="
-          container
-          d-flex
-          justify-content-center
-          mt-50
-          mb-50
-          list-control-container
-        "
-        style="flex-direction: column"
+        class="container list-control-container"
       >
         <input
           type="number"
@@ -43,7 +35,7 @@
           name="itemNumber"
           placeholder="Enter Item Number"
           required
-          style="height: 2.3rem; margin: 1rem"
+          style="height: 5 rem; margin: 1rem"
           onkeyup="additemNumberToListOnEnter(event)"
         />
         <input
@@ -53,7 +45,7 @@
           name="new-item-price-input"
           placeholder="Enter Item Price"
           required
-          style="height: 2.3rem; margin: 1rem"
+          style="height: 5 rem; margin: 1rem"
           onkeyup="additemNumberToListOnEnter(event)"
         />
         <!-- <input
@@ -67,7 +59,7 @@
         /> -->
         <button
           type="submit"
-          class="btn btn-primary"
+          class="btn btn-primary btn-lg"
           onclick="additemNumberToList()"
         >
           ADD TO LIST
@@ -77,8 +69,16 @@
           <div id="map-list" class="wrapper"></div>
         </div>
 
-        <div>
-          <button class="btn btn-success" id="download">GET TOTAL</button>
+        <div
+          style="
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 50px;
+            margin: 5rem;
+          "
+        >
+          <button class="btn btn-success btn-xl" id="download">BILL</button>
         </div>
       </div>
 
@@ -215,6 +215,12 @@
                     </div>
                   </div>
                 </div>
+              </div>
+              <div
+                class="list list-unstyled mb-0 text-left"
+                style="margin-left: 1rem"
+              >
+                धन्यवाद ! आपका दिन मंगलमय हो !
               </div>
             </div>
           </div>

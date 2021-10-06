@@ -91,6 +91,8 @@ a {
   display: flex;
   flex-direction: column;
   background-color: lightgray;
+  height: 100%;
+  padding: 5rem;
 
   /* justify-content: space-evenly; */
   /* align-items: baseline; */
@@ -123,4 +125,10 @@ body {
   color: #333;
   text-align: left;
   background-color: #eee;
+}
+.btn-xl {
+  padding: 1rem;
+  font-size: 20px;
+  border-radius: 10px;
+  width: 120%;
 }
