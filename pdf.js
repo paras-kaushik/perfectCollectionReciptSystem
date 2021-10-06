@@ -47,7 +47,7 @@ window.onload = function () {
   for (let key in shopItems) {
     if (shopItems.hasOwnProperty(key)) {
       // console.log(key, shopItems[key]);
-      var element = `<div>${key + " :" + shopItems[key]}</div>`;
+      var element = `<div>${key + " " + shopItems[key]}</div>`;
       document.getElementById("map-list").innerHTML += element;
     }
   }
@@ -59,19 +59,23 @@ window.onload = function () {
     }
 
     const invoice = this.document.getElementById("invoice");
-    console.log(invoice);
-    console.log(window);
-    var opt = {
-      margin: 1,
-      filename: "perfectCollectionTotalEstimate.pdf",
-      image: { type: "jpeg", quality: 0.98 },
-      html2canvas: { scale: 2 },
-      jsPDF: { unit: "in", format: "letter", orientation: "portrait" },
-    };
-    html2pdf().from(invoice).set(opt).save();
-    setTimeout(() => {
-      window.location.reload();
-    }, 5000);
+    console.log("------->>> ", invoice);
+    var keypads = document.getElementById("input-and-mapping-containing-div");
+    keypads.remove();
+    window.print();
+    window.location.reload();
+    //console.log(window);
+    // var opt = {
+    //   margin: 1,
+    //   filename: "perfectCollectionTotalEstimate.pdf",
+    //   image: { type: "jpeg", quality: 0.98 },
+    //   html2canvas: { scale: 2 },
+    //   jsPDF: { unit: "in", format: "letter", orientation: "portrait" },
+    // };
+    // html2pdf().from(invoice).set(opt).save();
+    // setTimeout(() => {
+    //   window.location.reload();
+    // }, 5000);
   });
 };
 

@@ -17,130 +17,137 @@
   </head>
 
   <body>
-    <div
+    <!-- <div
       class="container d-flex justify-content-center mt-50 mb-50"
       id="my-employer-image"
     >
       <img src="g.jpg" />
-    </div>
-    <div
-      class="container d-flex justify-content-center mt-50 mb-50"
-      style="flex-direction: column"
-    >
-      <div>
-        <div><h6>Item Number Meaning</h6></div>
-        <div id="map-list" class="wrapper"></div>
-      </div>
-      <div class="list-control-container">
+    </div> -->
+    <div style="display: flex; flex-direction: row">
+      <div
+        id="input-and-mapping-containing-div"
+        class="
+          container
+          d-flex
+          justify-content-center
+          mt-50
+          mb-50
+          list-control-container
+        "
+        style="flex-direction: column"
+      >
+        <input
+          type="number"
+          id="new-item-number"
+          class="input-pair"
+          name="itemNumber"
+          placeholder="Enter Item Number"
+          required
+          style="height: 2.3rem; margin: 1rem"
+          onkeyup="additemNumberToListOnEnter(event)"
+        />
+        <input
+          type="number"
+          id="new-item-price-input"
+          class="input-pair"
+          name="new-item-price-input"
+          placeholder="Enter Item Price"
+          required
+          style="height: 2.3rem; margin: 1rem"
+          onkeyup="additemNumberToListOnEnter(event)"
+        />
+        <!-- <input
+          type="number"
+          id="new-item-quantity-input"
+          name="new-item-quantity-input"
+          placeholder="Enter Item Quantity"
+          required
+          style="height: 2.3rem; margin: 1rem"
+          onkeyup="additemNumberToListOnEnter(event)"
+        /> -->
+        <button
+          type="submit"
+          class="btn btn-primary"
+          onclick="additemNumberToList()"
+        >
+          ADD TO LIST
+        </button>
         <div>
-          <input
-            type="number"
-            id="new-item-number"
-            class="input-pair"
-            name="itemNumber"
-            placeholder="Enter Item Number"
-            required
-            style="height: 2.3rem; margin: 1rem"
-            onkeyup="additemNumberToListOnEnter(event)"
-          />
-          <input
-            type="number"
-            id="new-item-price-input"
-            class="input-pair"
-            name="new-item-price-input"
-            placeholder="Enter Item Price"
-            required
-            style="height: 2.3rem; margin: 1rem"
-            onkeyup="additemNumberToListOnEnter(event)"
-          />
-          <!-- <input
-            type="number"
-            id="new-item-quantity-input"
-            name="new-item-quantity-input"
-            placeholder="Enter Item Quantity"
-            required
-            style="height: 2.3rem; margin: 1rem"
-            onkeyup="additemNumberToListOnEnter(event)"
-          /> -->
-          <button
-            type="submit"
-            class="btn btn-primary"
-            onclick="additemNumberToList()"
-          >
-            ADD TO LIST
-          </button>
+          <div><h6>Item Number Meaning</h6></div>
+          <div id="map-list" class="wrapper"></div>
         </div>
+
         <div>
           <button class="btn btn-success" id="download">GET TOTAL</button>
         </div>
       </div>
-    </div>
-    <div class="container d-flex justify-content-center mt-50 mb-50">
-      <div class="row">
-        <div class="col-md-12">
-          <div class="card" id="invoice">
-            <div class="card-header bg-transparent header-elements-inline">
-              <h6 class="card-title text-primary" style="font-weight: bolder">
-                PERFECT COLLECTION-<span style="font-size: smaller">
-                  ROUGH ESTIMATE</span
-                >
-              </h6>
-            </div>
-            <div class="card-body">
-              <div class="row">
-                <div class="col-sm-6">
-                  <div class="mb-4 pull-left">
-                    <ul class="list list-unstyled mb-0 text-left">
-                      <li>SC-190, Jaipuria Sunrise Plaza ,</li>
-                      <li>Indirapuram, GIZB, UP</li>
-                      <li>9899258797</li>
-                      <li>
-                        <span style="margin-right: 0.5rem"
-                          >Customer Number:</span
-                        >
-                        <input
-                          type="string"
-                          id="customer-number"
-                          name="customer-number"
-                          placeholder="Enter Customer Number"
-                          required
-                          autofocus
-                          onkeyup="movetoinputpairs(event)"
-                        />
-                      </li>
-                    </ul>
-                  </div>
-                </div>
-                <div class="col-sm-6">
-                  <div class="mb-4">
-                    <div class="text-sm-right">
-                      <h4 class="invoice-color mb-2 mt-md-2">Receipt #1</h4>
-                      <ul class="list list-unstyled mb-0">
+
+      <div class="container d-flex justify-content-center mt-50 mb-50">
+        <div class="row">
+          <div class="col-md-12">
+            <div class="card" id="invoice">
+              <div class="card-header bg-transparent header-elements-inline">
+                <h6 class="card-title text-primary" style="font-weight: bolder">
+                  PERFECT COLLECTION-<span style="font-size: smaller">
+                    ROUGH ESTIMATE</span
+                  >
+                </h6>
+              </div>
+              <div class="card-body">
+                <div class="row">
+                  <div class="col-sm-6">
+                    <div class="mb-4 pull-left">
+                      <ul class="list list-unstyled mb-0 text-left">
+                        <li>SC-190, Jaipuria Sunrise Plaza ,</li>
+                        <li>Indirapuram, GIZB, UP</li>
+                        <li>9899258797</li>
                         <li>
-                          Date:
-                          <span id="page-date" class="font-weight-semibold"
-                            >March 15, 2020</span
+                          <span style="margin-right: 0.5rem"
+                            >Customer Number:</span
                           >
+                          <input
+                            type="string"
+                            id="customer-number"
+                            name="customer-number"
+                            placeholder="Enter Customer Number"
+                            required
+                            autofocus
+                            onkeyup="movetoinputpairs(event)"
+                          />
                         </li>
                       </ul>
                     </div>
                   </div>
+                  <div class="col-sm-6">
+                    <div class="mb-4">
+                      <div class="text-sm-right">
+                        <h4 class="invoice-color mb-2 mt-md-2">Receipt #1</h4>
+                        <ul class="list list-unstyled mb-0">
+                          <li>
+                            Date:
+                            <span id="page-date" class="font-weight-semibold"
+                              >March 15, 2020</span
+                            >
+                          </li>
+                        </ul>
+                      </div>
+                    </div>
+                  </div>
                 </div>
               </div>
-            </div>
 
-            <div class="table-responsive">
-              <table class="table table-lg">
-                <thead>
-                  <tr>
-                    <th>ITEM</th>
-                    <th>PRICE</th>
-                    <th>QUANTITY</th>
-                    <th>Total</th>
-                  </tr>
-                </thead>
-                <tbody id="table-body">
-                  <!-- <tr id="id_1" class="item-row">
+              <div class="table-responsive">
+                <table class="table table-lg">
+                  <thead>
+                    <tr>
+                      <th>ITEM</th>
+                      <th>PRICE</th>
+                      <th>QUANTITY</th>
+                      <th>Total</th>
+                    </tr>
+                  </thead>
+                  <tbody id="table-body">
+                    <!-- <tr id="id_1" class="item-row">
                     <td>
                       <h6 class="mb-0 item-name">Kurta</h6>
                     </td>
@@ -162,58 +169,62 @@
                       </button>
                     </td>
                   </tr> -->
-                </tbody>
-              </table>
-            </div>
-            <div class="card-body">
-              <div class="d-md-flex flex-md-wrap">
-                <div class="pt-2 mb-3 wmin-md-400 ml-auto">
-                  <h6 class="mb-3 text-left">Total due</h6>
-                  <div class="table-responsive">
-                    <table class="table">
-                      <tbody>
-                        <tr>
-                          <th class="text-left">Total Items:</th>
-                          <td id="page-total-items" class="text-right">0</td>
-                        </tr>
-                        <tr>
-                          <th class="text-left">Subtotal:</th>
-                          <td id="page-total-sum" class="text-right">0</td>
-                        </tr>
-                        <tr>
-                          <th class="text-left">
-                            FIXED DISCOUNT:
-                            <span class="font-weight-normal">(10%)</span>
-                          </th>
-                          <td id="page-total-discountMinus" class="text-right">
-                            0
-                          </td>
-                        </tr>
-                        <tr>
-                          <th class="text-left">Net Total:</th>
-                          <td class="text-right text-primary">
-                            <h5
-                              id="paget-total-netTotal"
-                              class="font-weight-semibold"
+                  </tbody>
+                </table>
+              </div>
+              <div class="card-body">
+                <div class="d-md-flex flex-md-wrap">
+                  <div class="pt-2 mb-3 wmin-md-400 ml-auto">
+                    <h6 class="mb-3 text-left">Total due</h6>
+                    <div class="table-responsive">
+                      <table class="table">
+                        <tbody>
+                          <tr>
+                            <th class="text-left">Total Items:</th>
+                            <td id="page-total-items" class="text-right">0</td>
+                          </tr>
+                          <tr>
+                            <th class="text-left">Subtotal:</th>
+                            <td id="page-total-sum" class="text-right">0</td>
+                          </tr>
+                          <tr>
+                            <th class="text-left">
+                              FIXED DISCOUNT:
+                              <span class="font-weight-normal">(10%)</span>
+                            </th>
+                            <td
+                              id="page-total-discountMinus"
+                              class="text-right"
                             >
                               0
-                            </h5>
-                          </td>
-                        </tr>
-                      </tbody>
-                    </table>
+                            </td>
+                          </tr>
+                          <tr>
+                            <th class="text-left">Net Total:</th>
+                            <td class="text-right text-primary">
+                              <h5
+                                id="paget-total-netTotal"
+                                class="font-weight-semibold"
+                              >
+                                0
+                              </h5>
+                            </td>
+                          </tr>
+                        </tbody>
+                      </table>
+                    </div>
                   </div>
                 </div>
               </div>
             </div>
           </div>
-        </div>
-        <!-- <div class="col-md-12 text-right mb-3"> -->
+          <!-- <div class="col-md-12 text-right mb-3"> -->
 
-        <!-- <div>
+          <!-- <div>
           <div><h6>Item Number Meaning</h6></div>
           <div id="map-list" class="wrapper"></div>
         </div> -->
+        </div>
       </div>
     </div>
   </body>

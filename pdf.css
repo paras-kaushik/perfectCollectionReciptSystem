@@ -102,12 +102,11 @@ a {
 }
 .list-control-container {
   display: flex;
-  flex-direction: row;
+  flex-direction: column;
   background-color: lightgray;
-  width: 100%;
-  padding: 1rem;
-  justify-content: space-evenly;
-  align-items: baseline;
+
+  /* justify-content: space-evenly; */
+  /* align-items: baseline; */
 }
 #my-employer-image {
   width: 15%;
@@ -123,6 +122,6 @@ a {
 }
 .wrapper {
   display: grid;
-  grid-template-columns: repeat(15, 1fr);
+  grid-template-columns: repeat(5, 1fr);
   gap: 10px;
 }
