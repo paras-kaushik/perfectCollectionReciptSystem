@@ -156,7 +156,6 @@ function additemNumberToList() {
   var listItem = `<tr id=${unqiueId} class="item-row">
    <td> <span class="item-name">${itemName}</span> </td> 
    <td> <span class="item-price">${newItemPrice}</span> </td> 
-   <td> <span class="item-quantity">1</span> </td> 
    <td> 
    <span class="font-weight-semibold item-total">${newRowTotal}</span>
     <button class="item-delete btn btn-danger" class="item-delete" style="margin-left: 1rem" onclick="handleDelete(event)" > X </button> 
