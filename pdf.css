@@ -29,6 +29,8 @@
   flex: 1 1 auto;
   padding: 1.25rem;
   text-align: center;
+
+  margin-top: -2rem;
 }
 
 .card-title {
@@ -133,4 +135,9 @@ body {
   font-size: 20px;
   border-radius: 10px;
   width: 120%;
+}
+.table td,
+.table th {
+  vertical-align: top;
+  margin: -50px;
 }
