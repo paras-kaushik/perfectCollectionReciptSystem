@@ -114,7 +114,9 @@ a {
 .wrapper {
   display: grid;
   grid-template-columns: repeat(2, 1fr);
-  gap: 10px;
+  font-size: 3rem;
+  font-weight: bolder;
+  gap: 3rem;
 }
 body {
   margin: 0;

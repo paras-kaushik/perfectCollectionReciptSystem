@@ -28,6 +28,7 @@
         id="input-and-mapping-containing-div"
         class="container list-control-container"
       >
+        <h3>**Press SHIFT to print bill</h3>
         <input
           type="number"
           id="new-item-number"
@@ -49,22 +50,23 @@
           style="height: 5 rem; margin: 1rem"
           onkeyup="additemNumberToListOnEnter(event)"
         />
-        <!-- <input
+        <input
           type="number"
           id="new-item-quantity-input"
+          class="input-pair"
           name="new-item-quantity-input"
           placeholder="Enter Item Quantity"
           required
-          style="height: 2.3rem; margin: 1rem"
+          style="height: 5 rem; margin: 1rem"
           onkeyup="additemNumberToListOnEnter(event)"
-        /> -->
-        <button
+        />
+        <!-- <button
           type="submit"
           class="btn btn-primary btn-lg"
-          onclick="additemNumberToList()"
+          onclick="additemNumberToList(event)"
         >
           ADD TO LIST
-        </button>
+        </button> -->
         <div>
           <div><h6>Item Number Meaning</h6></div>
           <div id="map-list" class="wrapper"></div>
@@ -79,9 +81,14 @@
             margin: 5rem;
           "
         >
-          <button class="btn btn-success btn-xl" id="download">BILL</button>
+          <button
+            class="btn btn-success btn-xl"
+            style="display: none"
+            id="download"
+          >
+            BILL
+          </button>
         </div>
-        <h3>**Press SHIFT to print bill</h3>
       </div>
 
       <div
@@ -147,7 +154,7 @@
                   <thead>
                     <tr>
                       <th>ITEM</th>
-                      <th>PRICE</th>
+                      <th>PRICE X QUANTITY</th>
                     </tr>
                   </thead>
                   <tbody id="table-body">

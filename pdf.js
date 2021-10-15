@@ -40,6 +40,11 @@ window.onload = function () {
   });
   inputPair[1].addEventListener("keypress", (event) => {
     if (event.key === "Enter") {
+      inputPair[2].focus();
+    }
+  });
+  inputPair[2].addEventListener("keypress", (event) => {
+    if (event.key === "Enter") {
       inputPair[0].focus();
     }
   });
@@ -125,10 +130,10 @@ function additemNumberToListOnEnter(event) {
 function additemNumberToList() {
   var newItemNumber = document.getElementById("new-item-number").value;
   var newItemPrice = document.getElementById("new-item-price-input").value;
-  // var newItemQuantity = document.getElementById(
-  //   "new-item-quantity-input"
-  // ).value;
-  var newItemQuantity = 1;
+  var newItemQuantity = document.getElementById(
+    "new-item-quantity-input"
+  ).value;
+  //var newItemQuantity = 1;
   if (
     !(
       newItemNumber &&
@@ -143,7 +148,7 @@ function additemNumberToList() {
 
   document.getElementById("new-item-number").value = "";
   document.getElementById("new-item-price-input").value = "";
-  //document.getElementById("new-item-quantity-input").value = "";
+  document.getElementById("new-item-quantity-input").value = "";
 
   var newRowTotal = newItemPrice * newItemQuantity;
 
@@ -155,7 +160,7 @@ function additemNumberToList() {
 
   var listItem = `<tr id=${unqiueId} class="item-row">
    <td> <span class="item-name">${itemName}</span> </td> 
-   <td> <span class="item-price">${newItemPrice}</span> </td> 
+   <td> <span class="item-price">${newItemPrice * newItemQuantity}</span> </td> 
    <td> 
    <span class="font-weight-semibold item-total" style="display:none">${newRowTotal}</span>
     <button class="item-delete btn btn-danger" class="item-delete" style="margin-left: 1rem" onclick="handleDelete(event)" > X </button> 
@@ -199,6 +204,7 @@ var toggle = 0;
 function movetoinputpairs(event) {
   if (event.key == "Enter") {
     var pairs = document.querySelectorAll(".input-pair");
-    pairs[0].focus();
+    console.log(pairs);
+    //pairs[0].focus();
   }
 }
