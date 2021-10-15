@@ -160,12 +160,16 @@ function additemNumberToList() {
 
   var listItem = `<tr id=${unqiueId} class="item-row">
    <td> <span class="item-name">${itemName}</span> </td> 
-   <td> <span class="item-price">${newItemPrice * newItemQuantity}</span> </td> 
+   <td> <span class="item-price">${newItemPrice}</span> </td> 
+   <td><span class="item-quantity">${newItemQuantity}</span></td>
    <td> 
-   <span class="font-weight-semibold item-total" style="display:none">${newRowTotal}</span>
+   <span class="font-weight-semibold item-total">${newRowTotal}</span>
     <button class="item-delete btn btn-danger" class="item-delete" style="margin-left: 1rem" onclick="handleDelete(event)" > X </button> 
     </td> 
     </tr>`;
+  var msg = new SpeechSynthesisUtterance();
+  msg.text = itemName + " " + newRowTotal;
+  window.speechSynthesis.speak(msg);
 
   document.getElementById("table-body").innerHTML += listItem;
   // increase total items count
