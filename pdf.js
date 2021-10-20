@@ -15,7 +15,37 @@ const shopItems = {
   14: "Thermal",
   15: "Track Suit",
 };
+function resetMySale() {
+  //alert("YES");
+  n = 1;
+  m = 0;
+  localStorage.setItem("on_load_counter", n);
+  localStorage.setItem("total_sale", m);
+  localStorage.setItem("ltrs", "");
+
+  document.getElementById("lucky-draw-number").innerHTML = n;
+  document.getElementById("nichod").innerHTML = m;
+  document.getElementById("last-transaction").innerHTML =
+    localStorage.getItem("ltrs");
+}
 window.onload = function () {
+  var n = localStorage.getItem("on_load_counter");
+  var m = localStorage.getItem("total_sale");
+  if (n === null) {
+    n = 0;
+  }
+  if (m === null) {
+    m = 0;
+  }
+  //n++;
+  // GET THE RECIPT NUMBER FROM LOCAL STORAGE
+  localStorage.setItem("on_load_counter", n);
+  localStorage.setItem("total_sale", m);
+  document.getElementById("lucky-draw-number").innerHTML = n;
+  document.getElementById("nichod").innerHTML = m;
+  document.getElementById("last-transaction").innerHTML =
+    localStorage.getItem("ltrs");
+
   var currentdate = new Date();
   var datetime =
     currentdate.getDate() +
@@ -58,6 +88,10 @@ window.onload = function () {
   }
 
   document.getElementById("download").addEventListener("click", () => {
+    var transactionSum = document.getElementById(
+      "paget-total-netTotal"
+    ).innerText;
+    transactionSum = parseInt(transactionSum);
     var deleteButtons = document.getElementsByClassName("item-delete");
     for (var i = 0; i < deleteButtons.length; i++) {
       deleteButtons[i].style = "display: none";
@@ -69,6 +103,30 @@ window.onload = function () {
     keypads.remove();
     window.print();
     window.location.reload();
+
+    //////////////////////////////////////////////////////////////////////////
+
+    var n = localStorage.getItem("on_load_counter");
+    var m = localStorage.getItem("total_sale");
+
+    if (n === null) {
+      n = 0;
+    }
+    if (m === null) {
+      m = 0;
+    }
+    n++;
+    localStorage.setItem("on_load_counter", n); // increased recipt counter
+
+    localStorage.setItem("ltrs", "added " + transactionSum + " to " + m);
+
+    m = parseInt(m) + parseInt(transactionSum);
+    m = parseInt(m);
+    localStorage.setItem("total_sale", m);
+
+    // document.getElementById("nichod").innerHTML = m;
+    // document.getElementById("lucky-draw-number").innerHTML = n;
+
     //console.log(window);
     // var opt = {
     //   margin: 1,

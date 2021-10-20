@@ -28,7 +28,15 @@
         id="input-and-mapping-containing-div"
         class="container list-control-container"
       >
-        <h3>**Press SHIFT to print bill</h3>
+        <h1>
+          Total Sale Today: ₹
+          <span style="display: inline-block" id="nichod">0</span>
+        </h1>
+
+        <h1>
+          Last Transaction: ₹
+          <span style="display: inline-block" id="last-transaction">0</span>
+        </h1>
         <input
           type="number"
           id="new-item-number"
@@ -81,6 +89,14 @@
             margin: 5rem;
           "
         >
+          <button
+            id="reset"
+            class="btn btn-info btn-xl"
+            onclick="resetMySale()"
+          >
+            RESET
+          </button>
+
           <button
             class="btn btn-success btn-xl"
             style="display: none"
@@ -140,7 +156,8 @@
                 </ul>
                 <div class="list list-unstyled mb-0 text-left">
                   <h4 style="font-size: 1.5rem; font-weight: bold">
-                    Rough Estimate #1
+                    Rough Estimate
+                    <span id="lucky-draw-number">the lucky number here</span>
                   </h4>
                   <h4 style="font-size: 1.5rem; font-weight: bold">
                     Date:
