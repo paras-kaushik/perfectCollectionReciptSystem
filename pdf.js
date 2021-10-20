@@ -98,8 +98,20 @@ window.onload = function () {
 };
 
 function increaseTotalItemsCount() {
-  document.getElementById("page-total-items").innerText =
-    document.querySelectorAll("#table-body >tr").length;
+  // document.getElementById("page-total-items").innerText =
+  //   document.querySelectorAll("#table-body >tr").length;
+  var x = document.querySelectorAll("#table-body .item-quantity");
+  var tot = 0;
+  for (var i = 0; i < x.length; i++) {
+    if (Number.isNaN(parseInt(x[i].innerText))) {
+      tot = 0;
+      break;
+    }
+    tot += parseInt(x[i].innerText);
+  }
+  if (tot >= 0) {
+    document.getElementById("page-total-items").innerText = tot;
+  }
 }
 function updatePageTotals() {
   //updating the page total
