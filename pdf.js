@@ -118,7 +118,8 @@ window.onload = function () {
     n++;
     localStorage.setItem("on_load_counter", n); // increased recipt counter
 
-    localStorage.setItem("ltrs", "added " + transactionSum + " to " + m);
+    //localStorage.setItem("ltrs", "added " + transactionSum + " to " + m);
+    localStorage.setItem("ltrs", transactionSum);
 
     m = parseInt(m) + parseInt(transactionSum);
     m = parseInt(m);
