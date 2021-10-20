@@ -11,7 +11,7 @@ const shopItems = {
   10: "Hankey",
   11: "Socks",
   12: "Dhoti",
-  13: "Kurta",
+  13: "Jacket",
   14: "Thermal",
   15: "Track Suit",
 };
