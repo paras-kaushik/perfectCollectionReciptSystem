@@ -5,7 +5,7 @@ const shopItems = {
   4: "Shorts",
   5: "T. Shirt",
   6: "Capri",
-  7: "Under Garments",
+  7: "Under G",
   8: "Night Suit",
   9: "Towel",
   10: "Hankey",

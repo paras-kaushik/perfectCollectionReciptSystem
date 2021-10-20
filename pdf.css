@@ -113,7 +113,7 @@ a {
 }
 .wrapper {
   display: grid;
-  grid-template-columns: repeat(2, 1fr);
+  grid-template-columns: repeat(3, 9fr);
   font-size: 3rem;
   font-weight: bolder;
   gap: 3rem;
