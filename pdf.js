@@ -7,13 +7,13 @@ const shopItems = {
   6: "Capri",
   7: "Under G",
   8: "Night Suit",
-  9: "Towel",
-  10: "Hankey",
-  11: "Socks",
-  12: "Dhoti",
-  13: "Jacket",
-  14: "Thermal",
-  15: "Track Suit",
+  9: "Jacket",
+  10: "Thermal",
+  11: "Track Suit",
+  12: "Towel",
+  13: "Hankey",
+  14: "Socks",
+  15: "Dhoti",
 };
 function resetMySale() {
   //alert("YES");
