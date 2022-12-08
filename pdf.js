@@ -1,19 +1,27 @@
 const shopItems = {
   1: "Kurta",
   2: "Nighty",
-  3: "Lower",
-  4: "Shorts",
+  3: "N.Suit",
+  4: "Lower",
   5: "T. Shirt",
-  6: "Capri",
-  7: "Under G",
-  8: "Night Suit",
-  9: "Jacket",
-  10: "Thermal",
-  11: "Track Suit",
-  12: "Towel",
+  6: "Shorts",
+  7:"B.",
+  8: "Panties",
+  9: "U.W",
+  10: "Vest",
+  11:"Slip",
+  12:"C.Shorts",
   13: "Hankey",
   14: "Socks",
-  15: "Dhoti",
+  15:"Pajama",
+  16:"Supporter",
+  17: "Track Suit",
+  18: "Towel",
+  19: "Dhoti",
+  20:"Patka",
+  21: "Capri",
+  22: "Jacket",
+  23: "Thermal",
 };
 function resetMySale() {
   //alert("YES");
@@ -230,13 +238,13 @@ function additemNumberToList() {
   if (typeof itemName === "undefined") return;
 
   var listItem = `<tr id=${unqiueId} class="item-row">
-   <td> <span class="item-name">${itemName}</span> </td> 
-   <td> <span class="item-price">${newItemPrice}</span> </td> 
+   <td> <span class="item-name">${itemName}</span> </td>
+   <td> <span class="item-price">${newItemPrice}</span> </td>
    <td><span class="item-quantity">${newItemQuantity}</span></td>
-   <td> 
+   <td>
    <span class="font-weight-semibold item-total">${newRowTotal}</span>
-    <button class="item-delete btn btn-danger" class="item-delete" style="margin-left: 1rem" onclick="handleDelete(event)" > X </button> 
-    </td> 
+    <button class="item-delete btn btn-danger" class="item-delete" style="margin-left: 1rem" onclick="handleDelete(event)" > X </button>
+    </td>
     </tr>`;
   var msg = new SpeechSynthesisUtterance();
   msg.text = itemName + " " + newRowTotal;
